@@ -5,24 +5,25 @@ Just a small piece of code to make my life easier when creating audio/movie play
 for the VLC. Quite useful for indexing events, audiobooks, lectures, screencasts, podcasts etc. as
 well as making their content text searcheable.
 
-An index.txt goes in, a index.m3u comes out.
+A txt file goes in, a m3u file comes out.
 
 ```
-$ m3umkr \[path\] \[separator\]
+$ m3umkr [path] [separator] [input/output file name]
 ```
 
-Default path is the current directory.
-Default separator is the semicolon.
+- Default path is the current directory.
+- Default separator is the semicolon.
+- Default input/output file name is "index"
 
 ---
 
 The index.txt has the following format:
 
 ```
-Filename
-<Chapter name> <separator> <start time> \[<separator> <end time>\]
-<Chapter name> <separator> <start time> \[<separator> <end time>\]
-<Chapter name> <separator> <start time> \[<separator> <end time>\]
+<Filename>
+<Chapter name> <separator> <start time> [<separator> <end time>]
+<Chapter name> <separator> <start time> [<separator> <end time>]
+<Chapter name> <separator> <start time> [<separator> <end time>]
 ...
 ```
 
