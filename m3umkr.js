@@ -14,7 +14,7 @@ try {
 }
 
 const strToSeconds = (time) =>
-  time.split(":")
+  time.split(/:|;|\./)
       .reverse()
       .reduce(
         (acc, curr, i) => i === 0 ? Number(curr) :
