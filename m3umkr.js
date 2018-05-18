@@ -31,9 +31,10 @@ list.split("\n")
     }
     else
     {
-      [chaptername, time] = line
+      [chaptername, startTime, endTime] = line
       output += `#EXTINF: 0, ${chaptername}\n`
-      output += `#EXTVLCOPT:start-time=${strToSeconds(time)}\n`
+      output += `#EXTVLCOPT:start-time=${strToSeconds(startTime)}\n`
+      if (endTime) output += `#EXTVLCOPT:stop-time=${strToSeconds(endTime)}\n`
       output += `${filename}\n\n`
     }
   })

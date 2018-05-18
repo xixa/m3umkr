@@ -2,13 +2,13 @@ M3U Maker
 ===
 
 Just a small piece of code to make my life easier when creating audio/movie playlists
-for the VLC. Quite useful for indexing events, lectures, screencasts, podcasts etc. as
+for the VLC. Quite useful for indexing events, audiobooks, lectures, screencasts, podcasts etc. as
 well as making their content text searcheable.
 
 An index.txt goes in, a index.m3u comes out.
 
 ```
-$ m3umkr [path] [separator]
+$ m3umkr \[path\] \[separator\]
 ```
 
 Default path is the current directory.
@@ -20,9 +20,10 @@ The index.txt has the following format:
 
 ```
 Filename
-Chapter name [separator] time
-Chapter name [separator] time
-Chapter name [separator] time
+<Chapter name> <separator> <start time> \[<separator> <end time>\]
+<Chapter name> <separator> <start time> \[<separator> <end time>\]
+<Chapter name> <separator> <start time> \[<separator> <end time>\]
+...
 ```
 
 e.g.:
@@ -38,4 +39,5 @@ SF: Royce Gracie vs. Ken Shamrock; 1:04:41
 FINAL: Royce Gracie vs. Gerard Gordeau; 1:18:48
 ```
 
-It will spit out a m3u playlist of links the listed scenes.
+It will spit out a m3u playlist with anchors to the listed parts within an
+audio/video file.
