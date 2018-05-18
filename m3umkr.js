@@ -13,13 +13,20 @@ try {
   console.log(err)
 }
 
+const timeValidation = (value) => {
+  if (value > 60 || value.replace(/ /g,"").length > 2) {
+    throw new Error('Time was formatted wrong: ' + value)
+  }
+  return value
+}
+
 const strToSeconds = (time) =>
   time.split(/:|;|\./)
       .reverse()
       .reduce(
-        (acc, curr, i) => i === 0 ? Number(curr) :
-                          i === 1 ? acc + (curr * 60) :
-                          i === 2 ? acc + (curr * 3600) :
+        (acc, curr, i) => i === 0 ? Number(timeValidation(curr)) :
+                          i === 1 ? acc + (timeValidation(curr) * 60) :
+                          i === 2 ? acc + (timeValidation(curr) * 3600) :
                           void(0), 0)
 
 list.split("\n")
