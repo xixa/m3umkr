@@ -1,4 +1,5 @@
-#M3U Maker
+M3U Maker
+===
 
 Just a small piece of code to make my life easier when creating audio/movie playlists
 for the VLC. Quite useful for indexing events, lectures, screencasts, podcasts etc. as
@@ -13,7 +14,7 @@ $ m3umkr [path] [separator]
 Default path is the current directory.
 Default separator is the semicolon.
 
-===
+---
 
 The index.txt has the following format:
 
